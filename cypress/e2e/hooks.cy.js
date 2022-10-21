@@ -10,29 +10,29 @@ describe('Hooks', () => {
     })
 
     beforeEach("beforeEach", () => {
-        cy.visit('') 
-        cy.get('#registertoggle').dblclick()
-    })
+        cy.visit('');
+        cy.get('#registertoggle').dblclick();
+    });
 
     it('Probar el login con credenciales validas', () => {
-        cy.get('#user').type(usuario1)
-        cy.get('#pass').type(password)
-        cy.get('#submitForm').click()
-        cy.xpath(`//h2[starts-with(@id,'user_${usuario1}_')]`).should('exist')
-    })
+        cy.get('#user').type(usuario1);
+        cy.get('#pass').type(password);
+        cy.get('#submitForm').click();
+        cy.xpath(`//h2[starts-with(@id,'user_${usuario1}_')]`).should('exist');
+    });
 
     it('Probar el login con credenciales validas 2', () => {
-        cy.get('#user').type(usuario2)
-        cy.get('#pass').type(password)
-        cy.get('#submitForm').click()
-        cy.xpath(`//h2[starts-with(@id,'user_${usuario2}_')]`).should('exist')
-    })
+        cy.get('#user').type(usuario2);
+        cy.get('#pass').type(password);
+        cy.get('#submitForm').click();
+        cy.xpath(`//h2[starts-with(@id,'user_${usuario2}_')]`).should('exist');
+    });
 
     afterEach('after each', () => {
-        cy.get('#logout').click()
-    })
+        cy.get('#logout').click();
+    });
 
     after('After', () =>{
-        cy.log('**enviando reportes por discord**')
-    })
-})
+        cy.log('**enviando reportes por discord**');
+    });
+});

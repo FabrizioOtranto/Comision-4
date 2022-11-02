@@ -21,7 +21,7 @@ describe('Aserciones', () => {
     })
 
     it('Agregar espera estatica', () =>{
-        cy.wait(20000)
+        cy.wait(10000)
         cy.get('#message').should('have.text', 'You have waited for ten seconds, CONGRATULATIONS');
     });
 

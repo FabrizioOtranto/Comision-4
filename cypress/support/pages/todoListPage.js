@@ -18,7 +18,7 @@ export class TodoListPage {
     clickDeleteButton(tarea) {
         cy.contains(tarea).siblings(this.deleteButton).click();
     };
-
+    
     retornarTarea(tarea) {
         return cy.contains(tarea);
     };

@@ -19,7 +19,7 @@ describe('Aserciones', () => {
     })
 
     it("Deberia verificar que el titulo de la pagina sea Waits utilizando should", () => {
-        cy.get('#title').should('have.text', "Waits")
+        cy.get('#title').should('have.text', "Wait")
     })
 
     it("Deberia verificar que el titulo de la pagina sea Waits utilizando expect", () => {

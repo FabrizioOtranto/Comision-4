@@ -4,7 +4,7 @@ import { HomePage } from '../support/pages/homePage'
 import { TodoListPage } from '../support/pages/todoListPage'
 
 
-describe("Agregar tareas con page object model", () => {
+describe("Screenshots", () => {
     let datosLogin;
     const loginPage = new LoginPage();
     const navbarPage = new NavbarPage();
@@ -24,21 +24,13 @@ describe("Agregar tareas con page object model", () => {
         loginPage.escribirContraseña(datosLogin.primerUsuario.password);
         loginPage.clickBotonLogin();
         navbarPage.retornarUsuario(datosLogin.primerUsuario.username).should('be.visible');
-        homePage.clickTodoListLink();
     });
 
-    it('Agregar tarea', () => {
-        const tarea = 'Tarea'
-        todoListPage.escribirTarea(tarea);
-        todoListPage.clickBotonSend();
-        todoListPage.retornarTarea(tarea).should('exist')
+    it('Tomar una foto a toda la pantalla', () => {
+       cy.screenshot({capture:'fullPage'});
     });
 
-    it.only('Agregar tarea y eliminarla', () => {
-        const tarea = 'Tarea';
-        todoListPage.escribirTarea(tarea);
-        todoListPage.clickBotonSend();
-        todoListPage.retornarTarea(tarea).should('exist');
-        todoListPage.clickDeleteButton(tarea);
-    });
+    it('Tomar una foto al usuario del navbar', () => {
+        cy.get(`[id^='user_${datosLogin.primerUsuario.username}']`).screenshot('foto del usuario');    
+     });
 });

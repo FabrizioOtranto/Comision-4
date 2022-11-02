@@ -1,0 +1,15 @@
+{
+    "usuario":{
+        "username": "pushingit",
+        "password": "123456!"
+    },
+
+    "tareas": {
+        "task1": "Tarea 1",
+        "task2": "Tarea 2",
+        "task3": "Tarea 3",
+        "task4": "Tarea 4",
+        "task5": "Tarea 5"
+    }
+}
+

@@ -197,7 +197,7 @@ describe('Api testing', () => {
         }).then(respuesta =>{
             window.localStorage.setItem('token', respuesta.body.token)
             window.localStorage.setItem('user', respuesta.body.user.username)
-        })
+        });
         cy.visit('');
     });
 });

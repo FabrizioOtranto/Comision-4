@@ -1,7 +1,8 @@
 /// <reference types="cypress" />
+const constants = require('../support/constansts');
 
 describe("Desafio Dos", () => {
-  let datosTest
+  let datosTest;
 
   before('Fixtures', () => {
     cy.fixture('datosTest').then(datos => {
@@ -12,8 +13,8 @@ describe("Desafio Dos", () => {
   beforeEach("beforeEach", () => {
     cy.visit('');
     cy.get('#registertoggle').dblclick();
-    cy.get('#user').type(datosTest.usuario.username);
-    cy.get('#pass').type(datosTest.usuario.password);
+    cy.get('#user').type(constants.datoslogin.usuario);
+    cy.get('#pass').type(constants.datoslogin.contraseña);
     cy.get('#submitForm').click();
     cy.get('#todolistlink').click();
   });

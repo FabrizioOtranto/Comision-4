@@ -5,6 +5,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+    experimentalSessionAndOrigin: true,
     watchForFileChanges: false,
     defaultCommandTimeout: 3000,
     "baseUrl":"https://pushing-front.vercel.app/"
@@ -17,3 +18,6 @@ module.exports = defineConfig({
     json: true
   }
 });
+
+
+require('@applitools/eyes-cypress')(module);

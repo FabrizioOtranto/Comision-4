@@ -17,20 +17,18 @@ describe('Desafio 4', () => {
                 year: DATOS.register.year
             }
         }).then(respuesta => {
-            expect(respuesta.status).equal(200)
-        })
-
-        cy.request('POST', 'https://pushing-it-backend.herokuapp.com/api/login', {
-            username: DATOS.register.username,
-            password: DATOS.register.password
-        }).then(respuesta => {
             expect(respuesta.status).eq(200)
+        }).then(respuesta => {
+            cy.request('POST', 'https://pushing-it-backend.herokuapp.com/api/login', {
+                username: respuesta.body.newUser.username,
+                password: DATOS.register.password
+            }).then(respuesta => {
+                expect(respuesta.status).eq(200)
+            })
+        }).then(respuesta => {
+            cy.request('DELETE', 'https://pushing-it-backend.herokuapp.com/api/deleteuser/' + respuesta.body.user.username).then(respuesta => {
+                expect(respuesta.status).equal(200)
+            })
         })
-
-        cy.request('DELETE', `https://pushing-it-backend.herokuapp.com/api/deleteuser/${DATOS.register.username}`).then(respuesta => {
-            expect(respuesta.status).equal(200)
-        })
-        
     })
-
 })

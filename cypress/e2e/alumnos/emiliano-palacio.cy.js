@@ -5,14 +5,6 @@ const DATOS = require('../../support/constants')
 describe('Desafio 4', () => {
 
     it('Registro, login y eliminacion de usuario', () => {
-        /*    cy.request('POST', 'https://pushing-it-backend.herokuapp.com/api/register',{
-              username: register.username,
-               password: register.password,
-               gender: register.gender,
-               day: register.day,
-               month: register.month,
-               year: register.year
-           }) */
         cy.request({
             method: 'POST',
             url: 'https://pushing-it-backend.herokuapp.com/api/register',

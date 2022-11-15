@@ -2,7 +2,6 @@
  
 describe ("Api login", () => {
 
-
     it('Ingresando con pushingIT', () => {
         cy.request({
             method: "POST",

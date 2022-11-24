@@ -7,7 +7,7 @@ describe('Api testing', () => {
             url: "https://pushing-it-backend.herokuapp.com/api/register",
             method: "POST",
             body: {
-                username: "user11",
+                username: "user",
                 password: "pass",
                 gender: "Male",
                 day: "11",
@@ -23,7 +23,7 @@ describe('Api testing', () => {
             url: "https://pushing-it-backend.herokuapp.com/api/login",
             method: "POST",
             body: {
-                username: "user11",
+                username: "user",
                 password: "pass"
             }
         }).then(respuesta => {
@@ -31,7 +31,7 @@ describe('Api testing', () => {
         })
 
         cy.request({
-            url: "https://pushing-it-backend.herokuapp.com/api/deleteuser/user11",
+            url: "https://pushing-it-backend.herokuapp.com/api/deleteuser/user",
             method: "DELETE"
         }).then(respuesta => {
             expect(respuesta.status).equal(200)

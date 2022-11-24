@@ -17,9 +17,8 @@ describe('Api testing', () => {
             }
         }).then(respuesta => {
             expect(respuesta.status).equal(200)
-        })
-
-        cy.request({
+        }).then(()=> {
+            cy.request({
             url: "https://pushing-it-backend.herokuapp.com/api/login",
             method: "POST",
             body: {
@@ -29,6 +28,7 @@ describe('Api testing', () => {
         }).then(respuesta => {
             expect(respuesta.status).equal(200)
         })
+        }).then(() => {
 
         cy.request({
             url: "https://pushing-it-backend.herokuapp.com/api/deleteuser/user",
@@ -36,5 +36,7 @@ describe('Api testing', () => {
         }).then(respuesta => {
             expect(respuesta.status).equal(200)
         })
+    })
+
     })
 })

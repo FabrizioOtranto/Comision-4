@@ -1,5 +1,4 @@
-import { LoginPage } from '../support/pages/loginPage'
-import { NavbarPage } from '../support/pages/navbarPage'
+
 import { HomePage } from '../support/pages/homePage'
 import { TodoListPage } from '../support/pages/todoListPage'
 

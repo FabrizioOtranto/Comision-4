@@ -1,15 +1,18 @@
 {
-  "name": "comision-4",
+  "name": "desafiofinal",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress open --e2e -b chrome",
+    "prod": "npx cypress open --e2e -b chrome --config baseUrl=https://pushing-front.vercel.app",
+    "testing": "npx cypress open --e2e -b chrome --config baseUrl=https://pushing-it.vercel.app"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "cypress": "^10.3.0"
+  "dependencies": {
+    "cypress": "^10.3.0",
+    "cypress-xpath": "^2.0.1"
   }
 }

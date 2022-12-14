@@ -1,10 +1,11 @@
 describe("API register, Login y delete", () => {
     it("Registro usuario en la web pushingIT, login y delete usuario creado", () => {
-      const numero = Math.floor(Math.random() * 1000);
-      const user = `cdemicheri${numero}`;
+      
+      const user = "constanzaDemicheri"; //se actualizo
+      
   
       cy.request({
-        url: "https://pushing-it-backend.herokuapp.com/api/register",
+        url: "https://pushing-it.onrender.com/api/register",
         method: "POST",
         body: {
           username: user,
@@ -20,7 +21,7 @@ describe("API register, Login y delete", () => {
         })
         .then(() => {
           cy.request({
-            url: "http://pushing-it-backend.herokuapp.com/api/login",
+            url: "https://pushing-it.onrender.com/api/login",
             method: "POST",
             body: {
               username: user,
@@ -32,7 +33,7 @@ describe("API register, Login y delete", () => {
         })
         .then(() => {
           cy.request({
-            url: `https://pushing-it-backend.herokuapp.com/api/deleteuser/cdemicheri${numero}`,
+            url: `https://pushing-it.onrender.com/api/deleteuser/${user}`,
             method: "DELETE",
           }).then((respuesta) => {
             expect(respuesta.status).equal(200);
